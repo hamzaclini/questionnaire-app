@@ -82,7 +82,6 @@ def user_input_features():
         sex_encoded = sex_mapping[sex]
         study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
                                                        'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
-        questionnaire = st.sidebar.selectbox('Questionnaire',('TRAQ','FAST','TRAQ+FAST'))
         for i, question in enumerate(Comp, start=1):
             slider_output = st.select_slider(
             f"{question}",
@@ -98,7 +97,6 @@ def user_input_features():
                 'age': [age],
                 'sex': [sex_encoded],
                 'study': [study],
-                'test': [questionnaire],
                 'answers': [outputs]}
         features = [sex_encoded,age,outputs]
         df = pd.DataFrame(data)
