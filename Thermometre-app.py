@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 import base64
-import pickle
-import xgboost
 import datetime
 
 sex_mapping = {'male': 0, 'female': 1}
