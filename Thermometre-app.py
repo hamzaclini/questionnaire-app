@@ -34,7 +34,7 @@ st.markdown(
 
 
 st.write("""
-# Clinicog Questionnaire
+# Thermometre Questionnaire
 """)
 
 
