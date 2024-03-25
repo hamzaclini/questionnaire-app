@@ -45,18 +45,49 @@ client = init_connection()
 sex_mapping = {'male': 0, 'female': 1}
 answers = {}
 
+#Comp = [
+#    "Organisation du matériel (ex. matériel rangé sur la table)",
+#    "Concentration sur tâches exigeantes (ex. reste sur une activité sans se distraire)",
+#    "Application des instructions (ex. suit une directive sans rappel)",
+#    "Réactivité modérée aux distractions externes (ex. ignore les bruits alentours lors d'une tâche)",
+#    "Fluidité dans les transitions (ex. change d'activité sans délai)",
+#    "Capacité à rester calme (ex. reste assis pendant une histoire)",
+#    "Gestion des mouvements et manipulations (ex. ne met pas d'objets à la bouche)",
+#    "Régulation des prises de parole (ex. parle à des moments appropriés)",
+#    "Adaptation sociale et émotionnelle (ex. joue sans exclure les autres)",
+#    "Engagement dans les jeux collectifs (ex. suit les règles du jeu)"
+#    ]
+
 Comp = [
-    "Organisation du matériel (ex. matériel rangé sur la table)",
-    "Concentration sur tâches exigeantes (ex. reste sur une activité sans se distraire)",
-    "Application des instructions (ex. suit une directive sans rappel)",
-    "Réactivité modérée aux distractions externes (ex. ignore les bruits alentours lors d'une tâche)",
-    "Fluidité dans les transitions (ex. change d'activité sans délai)",
-    "Capacité à rester calme (ex. reste assis pendant une histoire)",
-    "Gestion des mouvements et manipulations (ex. ne met pas d'objets à la bouche)",
-    "Régulation des prises de parole (ex. parle à des moments appropriés)",
-    "Adaptation sociale et émotionnelle (ex. joue sans exclure les autres)",
-    "Engagement dans les jeux collectifs (ex. suit les règles du jeu)"
-    ]
+    "Est vieux jeu ou précoce",
+    "Est considéré comme un 'professeur excentrique par les autres enfants",
+    "Vit quelque peu dans son propre monde avec des intérêts intellectuels idiosyncratiques",
+    "Accumule des faits sur certains sujets (bonne mémoire mécanique) mais ne comprend pas vraiment le sens",
+    "A une compréhension littérale du langage ambigu et métaphorique",
+    "A un style de communication déviant avec un langage formel, pointilleux, vieux jeu ou 'robotique'",
+    "Invente des mots et expressions idiosyncratiques",
+    "A une voix ou un langage différent",
+    "Exprime des sons involontairement ; se racler la gorge, grogner, claquer des lèvres, pleurer ou crier",
+    "Est étonnamment bon dans certaines choses et étonnamment mauvais dans d'autres",
+    "Utilise le langage librement mais échoue à s'adapter aux contextes sociaux ou aux besoins des différents auditeurs",
+    "Manque d'empathie",
+    "Fait des remarques naïves et embarrassantes",
+    "A un style de regard déviant",
+    "Veut être sociable mais échoue à établir des relations avec ses pairs",
+    "Peut être avec d'autres enfants mais seulement selon ses propres termes",
+    "Manque de meilleur ami",
+    "Manque de bon sens",
+    "Est mauvais aux jeux : aucune idée de coopération en équipe, marque des 'but contre son camp'",
+    "A des mouvements ou gestes maladroits, mal coordonnés, maladroits ou gauches",
+    "A des mouvements involontaires du visage ou du corps",
+    "A des difficultés à accomplir des activités quotidiennes simples en raison de la répétition obligatoire de certaines actions ou pensées",
+    "A des routines spéciales : insiste sur aucune changement",
+    "Montre un attachement idiosyncratique aux objets",
+    "Est victime d'intimidation par d'autres enfants",
+    "A une expression faciale nettement inhabituelle",
+    "A une posture nettement inhabituelle"
+]
+
 
 
 
@@ -90,8 +121,10 @@ st.write("""
 
 st.sidebar.header('Informations')
 
-slider_values = [1,2,3,4]
-slider_strings = ["Très insuffisant", "Insuffisant", "Satisfaisant", "Très satisfaisant"]
+#slider_values = [1,2,3,4]
+slider_values = [1,2,3]
+#slider_strings = ["Très insuffisant", "Insuffisant", "Satisfaisant", "Très satisfaisant"]
+slider_strings = ["Non", "Un peu", "Oui"]
 
 def stringify(i:int = 0) -> str:
     return slider_strings[i-1]
@@ -144,6 +177,7 @@ def user_input_features():
         study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
                                                        'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
         #questionnaire = st.sidebar.selectbox('Questionnaire',('TRAQ','FAST','TRAQ+FAST'))
+        st.write("""## Cet enfant se distingue des autres enfants de son âge de la manière suivante:""")
         for i, question in enumerate(Comp, start=1):
             slider_output = st.select_slider(
             f"{question}",
