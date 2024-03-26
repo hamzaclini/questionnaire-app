@@ -3,9 +3,6 @@ import pandas as pd
 import base64
 import datetime
 import pymongo
-import os
-import psutil
-import time
 import hmac
 #from bson import ObjectId
 
@@ -224,14 +221,8 @@ with cent_co:
     st.image("clinicogImg.png", width=200)
     
 if button:
-     #write_data(document)
-     # Close streamlit browser tab
-     # Terminate streamlit python process
+     write_data(document)
      st.write("Merci d'avoir participé(e) à ce questionnaire")
-     time.sleep(1)
-     pid = os.getpid()
-     p = psutil.Process(pid)
-     p.terminate()
      
 
 
