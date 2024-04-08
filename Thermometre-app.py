@@ -56,33 +56,39 @@ answers = {}
 #    ]
 
 Comp = [
-    "Est vieux jeu ou précoce",
-    "Est considéré comme un 'professeur excentrique par les autres enfants",
-    "Vit quelque peu dans son propre monde avec des intérêts intellectuels idiosyncratiques",
-    "Accumule des faits sur certains sujets (bonne mémoire mécanique) mais ne comprend pas vraiment le sens",
-    "A une compréhension littérale du langage ambigu et métaphorique",
-    "A un style de communication déviant avec un langage formel, pointilleux, vieux jeu ou 'robotique'",
-    "Invente des mots et expressions idiosyncratiques",
-    "A une voix ou un langage différent",
-    "Exprime des sons involontairement ; se racler la gorge, grogner, claquer des lèvres, pleurer ou crier",
-    "Est étonnamment bon dans certaines choses et étonnamment mauvais dans d'autres",
-    "Utilise le langage librement mais échoue à s'adapter aux contextes sociaux ou aux besoins des différents auditeurs",
-    "Manque d'empathie",
-    "Fait des remarques naïves et embarrassantes",
-    "A un style de regard déviant",
-    "Veut être sociable mais échoue à établir des relations avec ses pairs",
-    "Peut être avec d'autres enfants mais seulement selon ses propres termes",
-    "Manque de meilleur ami",
-    "Manque de bon sens",
-    "Est mauvais aux jeux : aucune idée de coopération en équipe, marque des 'but contre son camp'",
-    "A des mouvements ou gestes maladroits, mal coordonnés, maladroits ou gauches",
-    "A des mouvements involontaires du visage ou du corps",
-    "A des difficultés à accomplir des activités quotidiennes simples en raison de la répétition obligatoire de certaines actions ou pensées",
-    "A des routines spéciales : insiste sur aucune changement",
-    "Montre un attachement idiosyncratique aux objets",
-    "Est victime d'intimidation par d'autres enfants",
-    "A une expression faciale nettement inhabituelle",
-    "A une posture nettement inhabituelle"
+     "L'utilisation de la planche permet d'améliorer ma mobilité.",
+    "L'utilisation de la planche améliore mon indépendance dans les activités quotidiennes.",
+    "Je trouve que la planche s'adapte facilement à différents environnements et situations.",
+    "Je pense que l'utilisation de la planche réduit mon risque de blessures lors des transferts.",
+    "Je trouve globalement la planche encombrante et difficile à transporter.",
+    "J'ai peur de basculer ou de tomber quand j'utilise la planche.",
+    "L'utilisation de la planche est inconfortable.",
+    "J'utilise la planche uniquement parce que je n'ai pas d'autres options.",
+    "Je préfère utiliser d'autres méthodes que la planche pour les transferts (aide d'un aidant, support mural, etc.).",
+    "Le bois semble adapté en terme de poids.",
+    "Le bois semble adapté en terme de durabilité.",
+    "Le polycarbonate semble adapté en terme de poids.",
+    "Le polycarbonate semble adapté en terme de durabilité.",
+    "Les matériaux en résine semblent adaptés en terme de poids.",
+    "Les matériaux en résine semblent adaptés en terme de durabilité.",
+    "Les matériaux en composite semblent adaptés en terme de poids.",
+    "Les matériaux en composite semblent adaptés en terme de durabilité.",
+    "La planche offre actuellement un équilibre optimal pour prévenir le glissement non désiré.",
+    "Un antidérapant semble nécessaire pour améliorer la sécurité de la glisse.",
+    "Ma glisse est identique peu importe les vêtements que je porte.",
+    "Je peux réaliser la glisse en sécurité même en étant totalement dénudé.",
+    "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
+    "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
+    "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
+    "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
+    "Une encoche sur la planche me semblerait adaptée en terme de fonctionnalité.",
+    "Une encoche sur la planche me semblerait adaptée en terme de stabilité et de sécurité.",
+    "Une accroche permettant de fixer la planche au fauteuil semble indispensable à une planche innovante.",
+    "Un système permettant à la planche de se plier semble indispensable à une planche innovante.",
+    "Un système permettant à la planche de se monter sur plusieurs supports semble indispensable à une planche innovante.",
+    "Une technologie intégrée à la planche pour prévenir les escarres serait une innovation notable pour les utilisateurs.",
+    "Une technologie intégrée à la planche pour réaliser sa pesée lors des transferts serait une innovation notable pour les utilisateurs.",
+    "Des capteurs intégrés à la planche pour surveiller la glisse lors des transferts représenteraient une innovation notable pour les utilisateurs."
 ]
 
 
@@ -119,9 +125,11 @@ st.write("""
 st.sidebar.header('Informations')
 
 #slider_values = [1,2,3,4]
-slider_values = [1,2,3]
+#slider_values = [1,2,3]
+slider_values = [1,2,3,4,5,6]
 #slider_strings = ["Très insuffisant", "Insuffisant", "Satisfaisant", "Très satisfaisant"]
-slider_strings = ["Non", "Un peu", "Oui"]
+#slider_strings = ["Non", "Un peu", "Oui"]
+slider_strings = ["Pas du tout d'accord", "Plutôt pas d'accord", "Plutôt d'accord", "Assez d'accord", "Très d'accord", "Complètement d'accord"]
 
 def stringify(i:int = 0) -> str:
     return slider_strings[i-1]
@@ -171,7 +179,7 @@ def user_input_features():
         date = st.sidebar.date_input("Date de naissance", datetime.date(2010, 1, 1))
         #age = current_date.year - date.year - ((current_date.month, current_date.day) < (date.month, date.day))
         sex = st.sidebar.selectbox('Sex',('Homme','Femme'))
-        study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
+        #study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
                                                        'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
         #questionnaire = st.sidebar.selectbox('Questionnaire',('TRAQ','FAST','TRAQ+FAST'))
         st.write("""## Cet enfant se distingue des autres enfants de son âge de la manière suivante:""")
@@ -188,8 +196,7 @@ def user_input_features():
         user_data = {"lastName": surname,
                      'firstName': name,
                      'birthDate': date.isoformat(),
-                     'sex': sex,
-                     'educationalLevel': study}
+                     'sex': sex}
         answers_data = answers
 
         document = {
