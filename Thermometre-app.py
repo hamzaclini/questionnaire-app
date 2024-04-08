@@ -180,7 +180,7 @@ def user_input_features():
         #age = current_date.year - date.year - ((current_date.month, current_date.day) < (date.month, date.day))
         sex = st.sidebar.selectbox('Sex',('Homme','Femme'))
         #study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
-                                                       'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
+        #                                               'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
         #questionnaire = st.sidebar.selectbox('Questionnaire',('TRAQ','FAST','TRAQ+FAST'))
         st.write("""## Cet enfant se distingue des autres enfants de son âge de la manière suivante:""")
         for i, question in enumerate(Comp, start=1):
