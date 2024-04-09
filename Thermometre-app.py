@@ -79,8 +79,6 @@ Comp = [
     "Je peux réaliser la glisse en sécurité même en étant totalement dénudé.",
     "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
     "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
-    "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
-    "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
     "Une encoche sur la planche me semblerait adaptée en terme de fonctionnalité.",
     "Une encoche sur la planche me semblerait adaptée en terme de stabilité et de sécurité.",
     "Une accroche permettant de fixer la planche au fauteuil semble indispensable à une planche innovante.",
