@@ -79,6 +79,8 @@ Comp = [
     "Je peux réaliser la glisse en sécurité même en étant totalement dénudé.",
     "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
     "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
+    "Une forme courbe me semblerait adaptée en terme de fonctionnalité.",
+    "Une forme courbe me semblerait adaptée en terme de stabilité et de sécurité.",
     "Une encoche sur la planche me semblerait adaptée en terme de fonctionnalité.",
     "Une encoche sur la planche me semblerait adaptée en terme de stabilité et de sécurité.",
     "Une accroche permettant de fixer la planche au fauteuil semble indispensable à une planche innovante.",
@@ -86,8 +88,7 @@ Comp = [
     "Un système permettant à la planche de se monter sur plusieurs supports semble indispensable à une planche innovante.",
     "Une technologie intégrée à la planche pour prévenir les escarres serait une innovation notable pour les utilisateurs.",
     "Une technologie intégrée à la planche pour réaliser sa pesée lors des transferts serait une innovation notable pour les utilisateurs.",
-    "Des capteurs intégrés à la planche pour surveiller la glisse lors des transferts représenteraient une innovation notable pour les utilisateurs."
-]
+    "Des capteurs intégrés à la planche pour surveiller la glisse lors des transferts représenteraient une innovation notable pour les utilisateurs."]
 
 
 
@@ -140,9 +141,9 @@ def stringify(i:int = 0) -> str:
 
 #def save_and_download_csv(df):
 #    csv_string = df.to_csv(index=False,sep=';')
-    b64 = base64.b64encode(csv_string.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="features.csv">Download CSV File</a>'
-    st.markdown(href, unsafe_allow_html=True)
+#    b64 = base64.b64encode(csv_string.encode()).decode()
+#    href = f'<a href="data:file/csv;base64,{b64}" download="features.csv">Download CSV File</a>'
+#    st.markdown(href, unsafe_allow_html=True)
 
 # def custom_date_input(label, min_date=None, max_date=None):
 #     if min_date is None:
@@ -180,7 +181,7 @@ def user_input_features():
         #study = st.sidebar.selectbox("Niveau d'etude",('CAP/BEP','Baccalauréat professionnel','Baccalauréat général', 'Bac +2 (DUT/BTS)', 'Bac +3 (Licence)',
         #                                               'Bac +5 (Master)', 'Bac +7 (Doctorat, écoles supérieurs)'))
         #questionnaire = st.sidebar.selectbox('Questionnaire',('TRAQ','FAST','TRAQ+FAST'))
-        st.write("""## Concernant mon utilisation de la planche de transfert:""")
+        st.write("""## Cet enfant se distingue des autres enfants de son âge de la manière suivante:""")
         for i, question in enumerate(Comp, start=1):
             slider_output = st.select_slider(
             f"{question}",
